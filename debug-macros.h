@@ -19,7 +19,7 @@
 
 #define dprintvLong(longe) printf("Long: %ld:**********DEBUG: Function: %s Line: %d \n", longe, __func__,  __LINE__)
 
-#define dprintvChar(charVal) printf("Char: %c:**********DEBUG: Function: %s Line: %d \n", charVal, charVal2, __func__,  __LINE__)
+#define dprintvChar(charVal) printf("Char: %c:**********DEBUG: Function: %s Line: %d \n", charVal, __func__,  __LINE__)
 
 // 2 Val:
 #define dprintvS2(stre,stre2) printf("Message1: %s Message2: %s **********DEBUG: Function: %s Line: %d \n", stre, stre2, __func__,  __LINE__)
