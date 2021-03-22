@@ -1,12 +1,16 @@
 #ifndef _WX_DEBUG_MACRO_H_
 #define _WX_DEBUG_MACRO_H_
 
+#include <stdio.h>
+
+// general utilities
 #define DBREAKPOINT {				\
 			int dummy;		\
 			dprintvS("Breakpoint"); \
 			scanf("%d",&dummy);     \
 		    }
 
+#define DCHECKPOINT printf("|-------------------------CHECKPOINT--------------------------| Function: %s Line: %d \n", __func__,  __LINE__);
 // 1 Val:
 #define dprintvS(stre) printf("Message: %s:**********DEBUG: Function: %s Line: %d \n", stre, __func__,  __LINE__)
 
