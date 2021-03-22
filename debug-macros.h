@@ -26,8 +26,8 @@
 
 #define dprintvInt2(inte,inte2) printf("Int1: %d Int2: %d **********DEBUG: Function: %s Line: %d \n", inte, inte2, __func__,  __LINE__)
 
-#define dprintvLong(longe,long2) printf("Long1: %ld Long2: %ld **********DEBUG: Function: %s Line: %d \n", longe, long2, __func__,  __LINE__)
+#define dprintvLong2(longe,long2) printf("Long1: %ld Long2: %ld **********DEBUG: Function: %s Line: %d \n", longe, long2, __func__,  __LINE__)
 
-#define dprintvChar(charVal,charVal2) printf("Char1: %c Char2: %c **********DEBUG: Function: %s Line: %d \n", charVal, charVal2, __func__,  __LINE__)
+#define dprintvChar2(charVal,charVal2) printf("Char1: %c Char2: %c **********DEBUG: Function: %s Line: %d \n", charVal, charVal2, __func__,  __LINE__)
 
 #endif
