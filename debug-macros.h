@@ -1,5 +1,7 @@
-#ifndef _WX_DEBUG_MACRO_H_
-#define _WX_DEBUG_MACRO_H_
+#ifndef _DEBUG_MACRO_H_
+#define _DEBUG_MACRO_H_
+
+#ifdef DEBUG
 
 #include <stdio.h>
 
@@ -30,4 +32,62 @@
 
 #define dprintvChar2(charVal,charVal2) printf("Char1: %c Char2: %c **********DEBUG: Function: %s Line: %d \n", charVal, charVal2, __func__,  __LINE__)
 
+
+//print binary
+#define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
+#define BYTE_TO_BINARY(byte)  \
+  (byte & 0x80 ? '1' : '0'), \
+  (byte & 0x40 ? '1' : '0'), \
+  (byte & 0x20 ? '1' : '0'), \
+  (byte & 0x10 ? '1' : '0'), \
+  (byte & 0x08 ? '1' : '0'), \
+  (byte & 0x04 ? '1' : '0'), \
+  (byte & 0x02 ? '1' : '0'), \
+  (byte & 0x01 ? '1' : '0') 
+
+#define PrtClr "\e[0;30;103m"
+#define BfrClr "\e[0m" //can't use these :/ TODO: Fix later and getting working with ThinLinc
+
+#define dprintvBin(bin) printf("\n "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(bin));
+
+
+#else
+
+
+//print binary
+#define BYTE_TO_BINARY_PATTERN {}
+#define BYTE_TO_BINARY(byte)  {}
+
+#define PrtClr {}
+#define BfrClr {}
+
+#define dprintvBin(bin) {}
+
+
+// general utilities
+#define DBREAKPOINT {}
+
+#define DCHECKPOINT {}
+
+// 1 Val:
+#define dprintvS(stre) {}
+
+#define dprintvInt(inte) {}
+
+#define dprintvLong(longe) {}
+
+#define dprintvChar(charVal) {}
+
+// 2 Val:
+#define dprintvS2(stre,stre2) {}
+
+#define dprintvInt2(inte,inte2) {}
+
+#define dprintvLong2(longe,long2) {}
+
+#define dprintvChar2(charVal,charVal2) {}
+
+
+
+#endif
 #endif
