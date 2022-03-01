@@ -1,11 +1,15 @@
 #ifndef _DEBUG_MACRO_H_
 #define _DEBUG_MACRO_H_
 
-#ifdef DEBUG
+#ifdef DEBUG_MACROS
 
 #include <stdio.h>
-
+// TODOS:
+// Variadic Macros
+// C++ Macros
 // general utilities
+
+ifndef _cplusplus
 #define DBREAKPOINT {				\
 			int dummy;		\
 			dprintvS("Breakpoint"); \
@@ -87,7 +91,9 @@
 
 #define dprintvChar2(charVal,charVal2) {}
 
-
+#else
+// TODO: Implement C++ Macros (Or code) here
+#endif
 
 #endif
 #endif
