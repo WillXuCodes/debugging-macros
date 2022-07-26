@@ -21,16 +21,16 @@ ifndef _cplusplus
 // 1 Val:
 #define dprintvS(stre) printf("Message: %s:**********DEBUG: Function: %s Line: %d \n", stre, __func__,  __LINE__)
 
-#define dprintvInt(inte) printf("Integer: %d:**********DEBUG: Function: %s Line: %d \n", inte, __func__,  __LINE__)
+#define dprintvInt(inte) printf("Integer: %d:**********DEBUG: VarName: " #inte " Function: %s Line: %d \n", inte, __func__,  __LINE__)
 
-#define dprintvLong(longe) printf("Long: %ld:**********DEBUG: Function: %s Line: %d \n", longe, __func__,  __LINE__)
+#define dprintvLong(longe) printf("Long: %ld:**********DEBUG: VarName: " #longe " Function: %s Line: %d \n", longe, __func__,  __LINE__)
 
-#define dprintvChar(charVal) printf("Char: %c:**********DEBUG: Function: %s Line: %d \n", charVal, __func__,  __LINE__)
+#define dprintvChar(charVal) printf("Char: %c:**********DEBUG: VarName: " #charVal " Function: %s Line: %d \n", charVal, __func__,  __LINE__)
 
 // 2 Val:
 #define dprintvS2(stre,stre2) printf("Message1: %s Message2: %s **********DEBUG: Function: %s Line: %d \n", stre, stre2, __func__,  __LINE__)
 
-#define dprintvInt2(inte,inte2) printf("Int1: %d Int2: %d **********DEBUG: Function: %s Line: %d \n", inte, inte2, __func__,  __LINE__)
+#define dprintvInt2(inte,inte2) printf("Int1: %d Int2: %d **********DEBUG: Function: %s VarName1: " #inte " VarName2: " #inte2 " Line: %d \n", inte, inte2, __func__,  __LINE__)
 
 #define dprintvLong2(longe,long2) printf("Long1: %ld Long2: %ld **********DEBUG: Function: %s Line: %d \n", longe, long2, __func__,  __LINE__)
 
