@@ -9,7 +9,7 @@
 // C++ Macros
 // general utilities
 
-ifndef _cplusplus
+#ifndef _cplusplus
 #define DBREAKPOINT {				\
 			int dummy;		\
 			dprintvS("Breakpoint"); \
