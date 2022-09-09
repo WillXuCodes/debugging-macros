@@ -104,7 +104,41 @@
 #define dprintvChar2(charVal,charVal2) {}
 
 #else
-// TODO: Implement C++ Macros (Or code) here
+
+
+//print binary
+#define BYTE_TO_BINARY_PATTERN {}
+#define BYTE_TO_BINARY(byte)  {}
+
+#define PrtClr {}
+#define BfrClr {}
+
+#define dprintvBin(bin) {}
+
+
+// general utilities
+#define DBREAKPOINT {}
+
+#define DCHECKPOINT {}
+
+// 1 Val:
+#define dprintvS(stre) {}
+
+#define dprintvInt(inte) {}
+
+#define dprintvLong(longe) {}
+
+#define dprintvChar(charVal) {}
+
+// 2 Val:
+#define dprintvS2(stre,stre2) {}
+
+#define dprintvInt2(inte,inte2) {}
+
+#define dprintvLong2(longe,long2) {}
+
+#define dprintvChar2(charVal,charVal2) {}
+
 #endif
 
 #endif
