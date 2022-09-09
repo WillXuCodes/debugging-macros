@@ -62,7 +62,7 @@
   (byte & 0x01 ? '1' : '0') 
 
 #define PrtClr "\e[0;30;103m"
-#define BfrClr "\e[0m" //can't use these :/ TODO: Fix later and getting working with ThinLinc
+#define BfrClr "\e[0m" //can't use these, figure out how to add platform detection 
 
 #define dprintvBin(bin) printf("\n "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(bin));
 
