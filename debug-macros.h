@@ -16,26 +16,38 @@
 			scanf("%d",&dummy);     \
 		    }
 
-#define DCHECKPOINT printf("|-------------------------CHECKPOINT--------------------------| Function: %s Line: %d \n", __func__,  __LINE__);
+// some places I work at don't exactly use the default printf command, but instead have a sim_printf or something like that.
+#define print_cmd printf
+
+#define DCHECKPOINT print_cmd("|-------------------------CHECKPOINT--------------------------| Function: %s Line: %d \n", __FILE__, __func__,  __LINE__);
 
 // 1 Val:
-#define dprintvS(stre) printf("Message: %s:**********DEBUG: Function: %s Line: %d \n", stre, __func__,  __LINE__)
+#define dprintvS(stre) print_cmd("Message: %s:**********DEBUG: File: %s Function: %s Line: %d \n", stre, __FILE__, __func__,  __LINE__)
 
-#define dprintvInt(inte) printf("Integer: %d:**********DEBUG: VarName: " #inte " Function: %s Line: %d \n", inte, __func__,  __LINE__)
+#define dprintvInt(inte) print_cmd("Integer: %d:**********DEBUG: VarName: " #inte " File: %s Function: %s Line: %d \n", inte, __FILE__, __func__,  __LINE__)
 
-#define dprintvLong(longe) printf("Long: %ld:**********DEBUG: VarName: " #longe " Function: %s Line: %d \n", longe, __func__,  __LINE__)
+#define dprintvLong(longe) print_cmd("Long: %ld:**********DEBUG: VarName: " #longe " File: %s Function: %s Line: %d \n", longe, __FILE__, __func__,  __LINE__)
 
-#define dprintvChar(charVal) printf("Char: %c:**********DEBUG: VarName: " #charVal " Function: %s Line: %d \n", charVal, __func__,  __LINE__)
+#define dprintvChar(charVal) print_cmd("Char: %c:**********DEBUG: VarName: " #charVal " File: %s Function: %s Line: %d \n", charVal, __FILE__, __func__,  __LINE__)
 
 // 2 Val:
-#define dprintvS2(stre,stre2) printf("Message1: %s Message2: %s **********DEBUG: Function: %s Line: %d \n", stre, stre2, __func__,  __LINE__)
+#define dprintvS2(stre,stre2) print_cmd("Message1: %s Message2: %s **********DEBUG: File: %s Function: %s Line: %d \n", stre, stre2, __FILE__, __func__,  __LINE__)
 
-#define dprintvInt2(inte,inte2) printf("Int1: %d Int2: %d **********DEBUG: Function: %s VarName1: " #inte " VarName2: " #inte2 " Line: %d \n", inte, inte2, __func__,  __LINE__)
+#define dprintvInt2(inte,inte2) print_cmd("Int1: %d Int2: %d **********DEBUG: File: %s Function: %s VarName1: " #inte " VarName2: " #inte2 " Line: %d \n", inte, inte2, __FILE__, __func__,  __LINE__)
 
-#define dprintvLong2(longe,long2) printf("Long1: %ld Long2: %ld **********DEBUG: Function: %s Line: %d \n", longe, long2, __func__,  __LINE__)
+#define dprintvLong2(longe,long2) print_cmd("Long1: %ld Long2: %ld **********DEBUG: File: %s Function: %s Line: %d \n", longe, long2, __FILE__, __func__,  __LINE__)
 
-#define dprintvChar2(charVal,charVal2) printf("Char1: %c Char2: %c **********DEBUG: Function: %s Line: %d \n", charVal, charVal2, __func__,  __LINE__)
+#define dprintvChar2(charVal,charVal2) print_cmd("Char1: %c Char2: %c **********DEBUG: File: %s Function: %s Line: %d \n", charVal, charVal2, __FILE__, __func__,  __LINE__)
 
+// Assertion
+#define DASSERT(assertion) \
+{ \
+	if(assertion) printf("**********DASSERT SUCCESS: | "#assertion" | is true. File: %s Function: %s Line: %d \n", __FILE__, __func__,  __LINE__); \
+	else { \
+		if(assertion) printf("**********DASSERT FAILED: | "#assertion" | is false. File: %s Function: %s Line: %d \n", __FILE__, __func__,  __LINE__"); \
+		DBREAKPOINT \
+	} \
+}
 
 //print binary
 #define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
