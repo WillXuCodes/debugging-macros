@@ -108,6 +108,8 @@
 #define dprintvInt2(inte,inte2) {}
 #define dprintvLong2(longe,long2) {}
 #define dprintvChar2(charVal,charVal2) {}
+
+#define DASSERT(assertion) {}
 #endif
 
 #endif
