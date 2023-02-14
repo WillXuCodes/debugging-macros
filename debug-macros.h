@@ -48,7 +48,7 @@
 { \
 	if(assertion) printf("**********DASSERT SUCCESS: | "#assertion" | is true. File: %s Function: %s Line: %d \n", __FILE__, __func__,  __LINE__); \
 	else { \
-		if(assertion) printf("**********DASSERT FAILED: | "#assertion" | is false. File: %s Function: %s Line: %d \n", __FILE__, __func__,  __LINE__); \
+		printf("**********DASSERT FAILED: | "#assertion" | is false. File: %s Function: %s Line: %d \n", __FILE__, __func__,  __LINE__); \
 		DBREAKPOINT \
 	} \
 }
