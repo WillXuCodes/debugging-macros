@@ -12,6 +12,7 @@
 // Variadic Macros
 // C++ Macros
 // general utilities
+// NOTE: __FUNC__ or __func__ is not supported on older compilers... need to add some conditional compilation for this too. 
 
 #ifndef _cplusplus
 #define DBREAKPOINT {				\
